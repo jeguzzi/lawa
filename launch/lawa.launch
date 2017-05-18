@@ -1,0 +1,7 @@
+<launch>
+   <node pkg="lawa" type="lawa-example.py" name="blinkstick" required="True" output="screen" ns="rover_0">
+      <param name="leds" value="5"/>
+      <param name="max_intensity" value="100"/>
+      <param name="ns" value="rover_0"/>
+   </node>
+</launch>

@@ -1,0 +1,7 @@
+<launch>
+   <node pkg="lawa" type="blinkstick_driver.py" name="blinkstick" required="True" output="screen">
+      <param name="leds" value="5"/>
+      <param name="max_intensity" value="100"/>
+   
+   </node>
+</launch>
