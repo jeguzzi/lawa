@@ -1,0 +1,7 @@
+version: '2'
+services:
+  led:
+     build:
+        dockerfile: docker/Dockerfile
+        context: ..
+     image: jeguzzi/df:led
