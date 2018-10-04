@@ -70,10 +70,12 @@ def add(topic_name, msg_type, period=1.0):
     return dec
 
 
-def run():
+def run(init=None):
     bs = blinkstickROS()
+    if init:
+        init(bs)
     params = rospy.get_param('~', {})
     for topic_name, msg_type, f in _lawa:
-        rospy.Subscriber(topic_name.format(**params), msg_type, f, callback_args=bs, queue_size=1)
+        rospy.Subscriber(topic_name.format(**params), msg_type, f, callback_args=bs, queue_size=2)
     rospy.spin()
     bs.turn_off(list(range(8)))
